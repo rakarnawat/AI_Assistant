@@ -1,0 +1,160 @@
+WindowManager :
+    FirstWindow:
+    MyLayout:
+
+<FirstWindow>
+    name :"first"
+    Label :
+        text: ""
+        text_size: self.size
+    Button :
+        text_size: self.size
+        halign: 'center'
+        valign: 'middle'
+        text: "Hello, Human, Let's get Started!"
+        font_size:32
+        on_parent: root.start()
+        on_release: app.root.current = "second"
+
+<MyLayout>
+    name: "second"
+    GridLayout:
+        cols:1
+        size : root.width, root.height
+
+        GridLayout:
+            padding:10
+            spacing:5
+            cols:1
+            top: 1
+            size_hint:(1, 2.5)
+            StrokeLabel:
+                id: output
+                text_size: self.size
+                halign: 'center'
+                valign: 'middle'
+                text:"Hello Human"
+                font_size:28
+                back_color:(0.157,0.455,0.753,1.0)
+                multiline:True
+
+        GridLayout:
+            cols:1
+            padding:10
+            size_hint:(1, 0.6)
+
+            StrokeTextInput:
+                id:text_input
+                font_size: 29
+                halign: 'center'
+                valign: 'middle'
+                back_color:(0.157,0.455,0.753,1.0)
+                multiline:False
+
+        GridLayout:
+            cols:2
+            padding:10
+            spacing:5
+            size_hint:(1, 0.5)
+            StrokeButton:
+                text:"Search"
+                back_color:(0.157,0.455,0.753,1.0)
+                on_press:root.press()
+
+            Stroke1Button:
+                text:"Talk"
+                back_color:(0.157,0.455,0.753,1.0)
+                on_press:root.press1()
+
+        GridLayout:
+            padding:10
+            spacing:5
+            cols:1
+            size_hint:(1,2)
+            Stroke1Button:
+                text:"Speech Recognition"
+                back_color:(0.157,0.455,0.753,1.0)
+                on_press:root.speech_recognition()
+                on_release:root.speech_result()
+
+<SmoothButton@Button>
+    background_color:(0,0,0,0)
+    background_normal:''
+    back_color:(1,0,1,1)
+    border_radius:[18]
+    canvas.before:
+        Color:
+            rgba:self.back_color
+        RoundedRectangle:
+            size:self.size
+            pos:self.pos
+            radius:self.border_radius
+<StrokeButton@Button>
+    background_color:(0,0,0,0)
+    background_normal:''
+    back_color:(1,0,1,1)
+    border_radius: 18
+    color: self.back_color
+    bold:True
+    canvas.before:
+        Color:
+            rgba: self.back_color
+        Line:
+            rounded_rectangle: (self.pos[0],self.pos[1],self.size[0],self.size[1],self.border_radius)
+            width:1.2
+
+<Stroke1Button@Button>
+    background_color:(0,0,0,0)
+    background_normal:''
+    back_color:(1,0,1,1)
+    border_radius: 18
+    color: self.back_color
+    bold:True
+    canvas.before:
+        Color:
+            rgba: self.back_color
+        Line:
+            rounded_rectangle: (self.pos[0],self.pos[1],self.size[0],self.size[1],self.border_radius)
+            width:1.2
+
+<StrokeTextInput@TextInput>
+    background_color:(0,0,0,0)
+    background_normal:''
+    back_color:(1,0,1,1)
+    border_radius: 18
+    color: self.back_color
+    bold:True
+    canvas.before:
+        Color:
+            rgba: self.back_color
+        Line:
+            rounded_rectangle: (self.pos[0],self.pos[1],self.size[0],self.size[1],self.border_radius)
+            width:1.2
+
+<StrokeLabel@Label>
+    background_color:(0,0,0,0)
+    background_normal:''
+    back_color:(1,0,1,1)
+    border_radius: 18
+    color: self.back_color
+    bold:True
+    canvas.before:
+        Color:
+            rgba: self.back_color
+        Line:
+            rounded_rectangle: (self.pos[0],self.pos[1],self.size[0],self.size[1],self.border_radius)
+            width:1.2
+
+<Stroke2Button@Button>
+    background_color:(0,0,0,0)
+    background_normal:''
+    back_color:(1,0,1,1)
+    border_radius: 18
+    color: self.back_color
+    bold:True
+    canvas.before:
+        Color:
+            rgba: self.back_color
+        Line:
+            rounded_rectangle: (self.pos[0],self.pos[1],self.size[0],self.size[1],self.border_radius)
+            width:1.2
