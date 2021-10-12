@@ -19,7 +19,7 @@ except:
     print("Internet issue1")
     exit()
 try:
-    app = wolframalpha.Client('QHU7T6-KGL38TUHGG')
+    app = wolframalpha.Client('/* your wolframalpha id */')
 except:
     print('Internet Issue2')
 
